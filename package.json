@@ -1,0 +1,58 @@
+{
+  "name": "@arcanag/safe-expr",
+  "version": "0.1.0",
+  "description": "A sandboxed expression evaluator for user-written formulas. expr-eval compatible syntax, built on jsep, with no route from an expression to JavaScript's object model.",
+  "keywords": [
+    "expression",
+    "evaluator",
+    "formula",
+    "sandbox",
+    "jsep",
+    "expr-eval",
+    "safe",
+    "calculator"
+  ],
+  "license": "MIT",
+  "author": "Anurag Sharma",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arcanag/safe-expr.git"
+  },
+  "homepage": "https://github.com/Arcanag/safe-expr#readme",
+  "bugs": {
+    "url": "https://github.com/Arcanag/safe-expr/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "jsep": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "expr-eval": "2.0.2",
+    "typescript": "5.9.3"
+  }
+}
